@@ -2,6 +2,7 @@ apiVersion: automation.cloudbees.io/v1alpha1
 kind: action
 description: "Fallback test action with no name or id"
 runs:
-  using: docker
-  image: alpine
-  args: ["echo", "This is a fallback test"]
+  using: composite
+  steps:
+    - uses: docker://alpine:3.18
+      run: echo "This is a fallback test"
