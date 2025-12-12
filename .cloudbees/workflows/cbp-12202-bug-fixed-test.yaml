@@ -15,3 +15,10 @@ jobs:
 
       # 3. Step with no name, and action missing both id and name (UI should show fallback label)
       - uses: ./.cloudbees/my-fallback-action
+
+      # 4. Step with user-defined name for configure-ecr-credentials (UI should show this name)
+      - name: Configure container registry for ECR
+        uses: cloudbees-io/configure-ecr-credentials@v1
+
+      # 5. Step with no name, using configure-ecr-credentials (UI should show action's name if present)
+      - uses: cloudbees-io/configure-ecr-credentials@v1
