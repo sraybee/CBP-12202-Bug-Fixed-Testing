@@ -27,3 +27,9 @@ jobs:
         shell: sh
         run: |
           echo "hello world"
+
+      - name: Say bye
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "hello bye"
