@@ -14,4 +14,4 @@ jobs:
       - uses: cloudbees-io/checkout@v1
 
       # 3. No step name, action missing both id and name (should show fallback)
-      - uses: fake/invalid@v1
+      - uses: ./.cloudbees/my-fallback-action
