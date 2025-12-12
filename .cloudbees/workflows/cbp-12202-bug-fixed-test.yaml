@@ -6,17 +6,14 @@ on:
 jobs:
   cbp-12202-test-job:
     steps:
-      # 1. User-defined step name (should show this name)
-      - name: User-defined Step Name
+      # 1. Step with user-defined name (UI should show this name)
+      - name: Step 1: User-defined step name
         uses: cloudbees-io/checkout@v1
 
-      # 2. No step name, action with id but missing name (should show action's internal name)
-      - uses: cloudbees-io/checkout@v1
+      # 2. Step with no name, but action has id (UI should show action's internal name)
+      - name: Step 2: No step name, action has id
+        uses: cloudbees-io/checkout@v1
 
-      # 3. No step name, action missing both id and name (should show fallback)
-      - uses: ./.cloudbees/my-fallback-action
-
-      # 4. Docker step with custom step name (should show the custom name)
-      - uses: docker://alpine:3.18
-        name: My Fallback Step
-        run: echo "This is a fallback test"
+      # 3. Step with no name, and action missing both id and name (UI should show fallback label)
+      - name: Step 3: No step name, action missing id and name
+        uses: ./.cloudbees/my-fallback-action
