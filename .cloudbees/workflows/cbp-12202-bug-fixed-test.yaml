@@ -1,0 +1,17 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: cbp-12202-bug-fixed-test
+on:
+  workflow_dispatch:
+jobs:
+  cbp-12202-test-job:
+    steps:
+      # 1. User-defined step name (should show this name)
+      - name: User-defined Step Name
+        uses: cloudbees-io/checkout@v1
+
+      # 2. No step name, action with id but missing name (should show action's internal name)
+      - uses: cloudbees-io/checkout@v1
+
+      # 3. No step name, action missing both id and name (should show fallback)
+      - uses: ""
