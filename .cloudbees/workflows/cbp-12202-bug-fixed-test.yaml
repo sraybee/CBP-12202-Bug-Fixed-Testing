@@ -22,3 +22,8 @@ jobs:
 
       # 5. Step with no name, using configure-ecr-credentials (UI should show action's name if present)
       - uses: cloudbees-io/configure-ecr-credentials@v1
+    
+      - uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "hello world"
