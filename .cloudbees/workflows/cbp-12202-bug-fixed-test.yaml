@@ -15,3 +15,8 @@ jobs:
 
       # 3. No step name, action missing both id and name (should show fallback)
       - uses: ./.cloudbees/my-fallback-action
+
+      # 4. Docker step with custom step name (should show the custom name)
+      - uses: docker://alpine:3.18
+        name: My Fallback Step
+        run: echo "This is a fallback test"
