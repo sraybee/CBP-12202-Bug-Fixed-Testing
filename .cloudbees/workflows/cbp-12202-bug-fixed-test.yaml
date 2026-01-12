@@ -13,7 +13,7 @@ jobs:
       # 2. Step with no name, but action has id (UI should show action's internal name)
       - uses: cloudbees-io/checkout@v1
 
-      # 3. Step with no name, and action missing both id and name (UI should show fallback label)
+      # 3. Step with no name, and action missing both id and name (UI should show fallback label, this is my user defined action to simulate fallback incase user uses an action that does not have a name itself)
       - uses: ./.cloudbees/my-fallback-action
 
       # 4. Step with user-defined name for configure-ecr-credentials (UI should show this name)
